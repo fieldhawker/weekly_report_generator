@@ -63,6 +63,7 @@ function doPost(e){
   html.mail_text = mail_text;
   html.mail_address = group_address;
   html.mailto = mailto;
+  html.parameters = e.parameters;
   //html.data = e;
   return html.evaluate();
   

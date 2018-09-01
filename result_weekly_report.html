@@ -59,6 +59,8 @@
         $( "#mail_address" ).val(<?=mail_address?>);
         $( "#mail_text" ).val(<?=mail_text?>);
         
+//        $.cookie('parameters', <?=parameters?>);
+        
         var clipboard = new Clipboard('.btn');
         
         clipboard.on('success', function(e) {

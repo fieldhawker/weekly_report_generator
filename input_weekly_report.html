@@ -8,6 +8,9 @@
   <body>
   <?var url = getScriptUrl();?>
 <form id="weekly_report" method="post" action=<?=url?>>
+
+  <div id="parameters"></div>
+
   <div id="space">
     <div class="msr_text_03">
       <h1 class="msr_h103">シュウジェネ 0.1</h1>
@@ -118,6 +121,9 @@
           select.add(option);
           
         }
+        
+//        $('#parameters').text($.cookie('parameters'));
+        
         //console.log(staffs.data[0].name);
       });
     </script>

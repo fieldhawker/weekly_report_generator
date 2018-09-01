@@ -2,6 +2,7 @@
 <html>
   <head>
     <base target="_top">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <?!= HtmlService.createHtmlOutputFromFile('stylesheet').getContent(); ?>
   </head>
   <body>
@@ -12,7 +13,7 @@
     
     <div class="msr_text_03">
     
-      <table class="msr_table03">
+      <table class="msr_table02">
         <tbody>
           <tr>
             <td><p class="msr_btn05 btn" data-clipboard-target="#mail_address">
@@ -21,6 +22,8 @@
             <td><p class="msr_btn05 btn" data-clipboard-target="#mail_title">
               <a>タイトルをコピー</a>
             </p></td>
+          </tr>
+          <tr>
             <td><p class="msr_btn05 btn" data-clipboard-target="#mail_text">
               <a>本文をコピー</a>
             </p></td>
@@ -28,8 +31,6 @@
               <a href=<?=mailto?>>メーラーを起動</a>
             </p></td>
           </tr>
-          </tr>
-          <tr>
         </tbody>
       </table>
     

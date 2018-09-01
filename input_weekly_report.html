@@ -2,6 +2,7 @@
 <html>
   <head>
     <base target="_top">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <?!= HtmlService.createHtmlOutputFromFile('stylesheet').getContent(); ?>
   </head>
   <body>
@@ -20,8 +21,8 @@
   </div>
   <div class="msr_text_03">
     <h3 class="msr_h303">期間</h3>
-    <input type="text" class="w100" id="start_date" name="start_date" readonly="readonly" /> - 
-    <input type="text" class="w100" id="end_date" name="end_date" readonly="readonly" />
+    <input type="text" class="w200" id="start_date" name="start_date" readonly="readonly" /> - 
+    <input type="text" class="w200" id="end_date" name="end_date" readonly="readonly" />
   </div>
   <div class="msr_chack_03">
     <h3 class="msr_h303">■1. 今週は何を行いましたか？(複数回答可)</h3>
@@ -53,7 +54,7 @@
     <select name="q2">
       <option value="余裕がある">余裕がある</option>
       <option value="やや余裕がある">やや余裕がある</option>
-      <option value="適度な作業量">適度な作業量</option>
+      <option value="適度な作業量" selected>適度な作業量</option>
       <option value="やや忙しい">やや忙しい</option>
       <option value="忙しい">忙しい</option>
     </select>
@@ -63,7 +64,7 @@
     <select name="q3">
       <option value="体調が良い">体調が良い</option>
       <option value="やや体調が良い">やや体調が良い</option>
-      <option value="体調は普通だ">体調は普通だ</option>
+      <option value="体調は普通だ" selected>体調は普通だ</option>
       <option value="やや体調が悪い">やや体調が悪い</option>
       <option value="体調が悪い">体調が悪い</option>
     </select>
@@ -73,7 +74,7 @@
     <select name="q4">
       <option value="良い">良い</option>
       <option value="やや良い">やや良い</option>
-      <option value="普通">普通</option>
+      <option value="普通" selected>普通</option>
       <option value="やや悪い">やや悪い</option>
       <option value="悪い">悪い</option>
     </select>
@@ -83,7 +84,7 @@
     <select name="q5">
       <option value="続けたい">続けたい</option>
       <option value="まだ続けても良い">まだ続けても良い</option>
-      <option value="現状維持で良い">現状維持で良い</option>
+      <option value="現状維持で良い" selected>現状維持で良い</option>
       <option value="あまり続けたくない">あまり続けたくない</option>
       <option value="別の現場に移りたい">別の現場に移りたい</option>
     </select>

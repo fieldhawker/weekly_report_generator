@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('stylesheet').getContent(); ?>
+  </head>
+  <body>
+  <div id="space">
+    <div class="msr_text_03">
+      <h1 class="msr_h103">シュウジェネ 0.1</h1>
+    </div>
+    
+    <div class="msr_text_03">
+    
+      <table class="msr_table03">
+        <tbody>
+          <tr>
+            <td><p class="msr_btn05 btn" data-clipboard-target="#mail_address">
+              <a>宛先をコピー</a>
+            </p></td>
+            <td><p class="msr_btn05 btn" data-clipboard-target="#mail_title">
+              <a>タイトルをコピー</a>
+            </p></td>
+            <td><p class="msr_btn05 btn" data-clipboard-target="#mail_text">
+              <a>本文をコピー</a>
+            </p></td>
+            <td><p class="msr_btn05">
+              <a href=<?=mailto?>>メーラーを起動</a>
+            </p></td>
+          </tr>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+    
+    </div>
+    
+    <div class="msr_text_03">
+      <h3 class="msr_h303">宛先</h3>
+      <input type="text" class="w300" id="mail_address" name="mail_address" />
+    </div>
+    
+    <div class="msr_text_03">
+      <h3 class="msr_h303">タイトル</h3>
+      <input type="text" class="w300" id="mail_title" name="mail_title" />
+    </div>
+    
+    <div class="msr_textarea_03">
+      <h3 class="msr_h303">■本文</h3>
+      <textarea name="text" id="mail_text" class="mailtext"></textarea>
+    </div>
+  </div>
+  <?!= HtmlService.createHtmlOutputFromFile('javascript').getContent(); ?>
+    <script>
+      $(function() {
+      
+        $( "#mail_title" ).val(<?=mail_title?>);
+        $( "#mail_address" ).val(<?=mail_address?>);
+        $( "#mail_text" ).val(<?=mail_text?>);
+        
+        var clipboard = new Clipboard('.btn');
+        
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        });
+        
+      });
+    </script>
+  </body>
+</html>
+
+

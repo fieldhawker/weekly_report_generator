@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('stylesheet').getContent(); ?>
+  </head>
+  <body>
+  <?var url = getScriptUrl();?>
+<form id="weekly_report" method="post" action=<?=url?>>
+  <div id="space">
+    <div class="msr_text_03">
+      <h1 class="msr_h103">シュウジェネ 0.1</h1>
+    </div>
+
+  <div class="msr_pulldown_03">
+    <h3 class="msr_h303">名前</h3>
+    <select name="staff_select" id="staff_select">
+      <!--<option value="">選択してください</option>-->
+    </select>
+  </div>
+  <div class="msr_text_03">
+    <h3 class="msr_h303">期間</h3>
+    <input type="text" class="w100" id="start_date" name="start_date" readonly="readonly" /> - 
+    <input type="text" class="w100" id="end_date" name="end_date" readonly="readonly" />
+  </div>
+  <div class="msr_chack_03">
+    <h3 class="msr_h303">■1. 今週は何を行いましたか？(複数回答可)</h3>
+    <input type="checkbox" name="q1" id="msr_03_chack01" value="企画・提案" />
+    <label for="msr_03_chack01">企画・提案</label>
+    <input type="checkbox" name="q1" id="msr_03_chack02" value="要件定義（要求定義）" />
+    <label for="msr_03_chack02">要件定義（要求定義）</label>
+    <input type="checkbox" name="q1" id="msr_03_chack03" value="外部設計（基本設計、概要設計）" />
+    <label for="msr_03_chack03">外部設計（基本設計、概要設計）</label>
+    <input type="checkbox" name="q1" id="msr_03_chack04" value="内部設計（詳細設計、機能設計）" />
+    <label for="msr_03_chack04">内部設計（詳細設計、機能設計）</label>
+    <input type="checkbox" name="q1" id="msr_03_chack05" value="製造・実装" />
+    <label for="msr_03_chack05">製造・実装</label>
+    <input type="checkbox" name="q1" id="msr_03_chack06" value="単体テスト" />
+    <label for="msr_03_chack06">単体テスト</label>
+    <input type="checkbox" name="q1" id="msr_03_chack07" value="結合テスト" />
+    <label for="msr_03_chack07">結合テスト</label>
+    <input type="checkbox" name="q1" id="msr_03_chack08" value="総合テスト" />
+    <label for="msr_03_chack08">総合テスト</label>
+    <input type="checkbox" name="q1" id="msr_03_chack09" value="システムテスト" />
+    <label for="msr_03_chack09">システムテスト</label>
+    <input type="checkbox" name="q1" id="msr_03_chack10" value="運用テスト" />
+    <label for="msr_03_chack10">運用テスト</label>
+    <input type="checkbox" name="q1" id="msr_03_chack11" value="運用・保守" />
+    <label for="msr_03_chack11">運用・保守</label>
+  </div>
+  <div class="msr_pulldown_03">
+    <h3 class="msr_h303">■2. 現在の案件は多忙ですか?</h3>
+    <select name="q2">
+      <option value="余裕がある">余裕がある</option>
+      <option value="やや余裕がある">やや余裕がある</option>
+      <option value="適度な作業量">適度な作業量</option>
+      <option value="やや忙しい">やや忙しい</option>
+      <option value="忙しい">忙しい</option>
+    </select>
+  </div>
+  <div class="msr_pulldown_03">
+    <h3 class="msr_h303">■3. 体調は問題ありませんか？</h3>
+    <select name="q3">
+      <option value="体調が良い">体調が良い</option>
+      <option value="やや体調が良い">やや体調が良い</option>
+      <option value="体調は普通だ">体調は普通だ</option>
+      <option value="やや体調が悪い">やや体調が悪い</option>
+      <option value="体調が悪い">体調が悪い</option>
+    </select>
+  </div>
+  <div class="msr_pulldown_03">
+    <h3 class="msr_h303">■4. 現場の人間関係は?</h3>
+    <select name="q4">
+      <option value="良い">良い</option>
+      <option value="やや良い">やや良い</option>
+      <option value="普通">普通</option>
+      <option value="やや悪い">やや悪い</option>
+      <option value="悪い">悪い</option>
+    </select>
+  </div>
+  <div class="msr_pulldown_03">
+    <h3 class="msr_h303">■5. 現在の案件で作業を続けたいですか？</h3>
+    <select name="q5">
+      <option value="続けたい">続けたい</option>
+      <option value="まだ続けても良い">まだ続けても良い</option>
+      <option value="現状維持で良い">現状維持で良い</option>
+      <option value="あまり続けたくない">あまり続けたくない</option>
+      <option value="別の現場に移りたい">別の現場に移りたい</option>
+    </select>
+  </div>
+  
+  <div class="msr_textarea_03">
+    <h3 class="msr_h303">■6. 相談したいこと・困っていること(自由記入)</h3>
+      <textarea name="q6"></textarea>
+  </div>
+  <p class="msr_sendbtn_03">
+    <input type="submit" value="出力">
+  </p>
+  </div>
+</form>
+<?!= HtmlService.createHtmlOutputFromFile('javascript').getContent(); ?>
+    <script>
+      $(function() {
+      
+        // =====================
+        // 社員選択セレクトボックスの項目追加
+        // =====================
+        
+        var select = document.getElementById("staff_select");
+        var staffs = { data: JSON.parse(<?= data ?>) };
+        console.log(staffs);
+        for(var i=0;i<staffs.data.length;i++){
+        
+          option = document.createElement('option');
+          option.setAttribute('value', i);
+          option.innerHTML = staffs.data[i].name;
+          select.add(option);
+          
+        }
+        //console.log(staffs.data[0].name);
+      });
+    </script>
+  </body>
+</html>
+
+

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125084205-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-125084205-1');
+    </script>
+
     <base target="_top">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <?!= HtmlService.createHtmlOutputFromFile('stylesheet').getContent(); ?>
@@ -8,7 +18,7 @@
   <body>
   <div id="space">
     <div class="msr_text_03">
-      <h1 class="msr_h103">シュウジェネ 0.1</h1>
+      <h1 class="msr_h103">シュウジェネ 1.0 Ver.KT </h1>
     </div>
     
     <div class="msr_text_03">
@@ -38,17 +48,31 @@
     
     <div class="msr_text_03">
       <h3 class="msr_h303">宛先</h3>
-      <input type="text" class="w300" id="mail_address" name="mail_address" />
+      <input type="text" id="mail_address" name="mail_address" />
     </div>
     
     <div class="msr_text_03">
       <h3 class="msr_h303">タイトル</h3>
-      <input type="text" class="w300" id="mail_title" name="mail_title" />
+      <input type="text" id="mail_title" name="mail_title" />
     </div>
     
     <div class="msr_textarea_03">
       <h3 class="msr_h303">■本文</h3>
       <textarea name="text" id="mail_text" class="mailtext"></textarea>
+    </div>
+    
+    <div class="msr_textarea_03">
+      <div class="frame frame-red">
+        <div class="frame-title caution">
+          CAUTION
+        </div>
+        <p>
+          メーラーが起動しない人は
+          <a href="https://dekiru.net/article/16608/" target="_blnk">ココ</a>とか
+          <a href="https://memorva.jp/internet/pc/android_default_app_change_gmail.php" target="_blnk">ココ</a>とかを参考に、
+          mailtoを動作するようにしてください。
+        </p>
+      </div>
     </div>
   </div>
   <?!= HtmlService.createHtmlOutputFromFile('javascript').getContent(); ?>
@@ -59,8 +83,16 @@
         $( "#mail_address" ).val(<?=mail_address?>);
         $( "#mail_text" ).val(<?=mail_text?>);
         
-//        $.cookie('parameters', <?=parameters?>);
-        
+        $.cookie('staff_select', <?=staff_select?>);
+        $.cookie('start_date', <?=start_date?>);
+        $.cookie('end_date', <?=end_date?>);
+        $.cookie('q1', <?=q1?>);
+        $.cookie('q2', <?=q2?>);
+        $.cookie('q3', <?=q3?>);
+        $.cookie('q4', <?=q4?>);
+        $.cookie('q5', <?=q5?>);
+        $.cookie('q6', <?=q6?>);
+                
         var clipboard = new Clipboard('.btn');
         
         clipboard.on('success', function(e) {

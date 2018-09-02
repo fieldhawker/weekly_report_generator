@@ -2,13 +2,15 @@
 
 #space {
   margin: 30px;
-  width: 400px;
 }
 /*--------------------------------------
 幅指定
 ---------------------------------------*/
 .w100 {
   width: 100px !important;
+}
+.w120 {
+  width: 120px !important;
 }
 .w200 {
   width: 200px !important;
@@ -33,7 +35,7 @@
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
   box-sizing: border-box;
   color: #fff;
-  font-size: 34px;
+  font-size: 30px;
   margin: 0 0 20px;
   padding: 5px 20px 5px 25px;
   position: relative;
@@ -61,21 +63,21 @@
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
   box-sizing: border-box;
   color: #1B73BA;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0 0 20px;
   padding: 10px 15px 10px;
 }
 .msr_h303 {
   border-bottom: 2px solid #1B73BA;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   margin: 0 0 20px;
   padding-bottom: 5px;
 }
 .msr_h403 {
   border-left: 2px solid #1B73BA;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0 0 20px;
   padding-left: 5px;
@@ -87,7 +89,7 @@
 
 .msr_text_03 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 100%;
 }
 .msr_text_03 label {
   display: block;
@@ -106,9 +108,10 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-size: 18px;
+  font-size: 14px;
   padding: 10px;
   height: 40px;
+  width: 100%;
 }
 
 /*--------------------------------------
@@ -117,7 +120,7 @@
 
 .msr_radio_03 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 100%;
 }
 .msr_radio_03 p {
   font-size: 14px;
@@ -130,7 +133,7 @@
 .msr_radio_03 input[type=radio] + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5px;
   margin-right: 12px;
   padding: 0 0 3px 24px;
@@ -178,7 +181,7 @@
 
 .msr_chack_03 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 100%;
 }
 .msr_chack_03 p {
   font-size: 14px;
@@ -191,7 +194,7 @@
 .msr_chack_03 input[type=checkbox] + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.5px;
   margin-right: 12px;
   padding: 0 0 0 24px;
@@ -243,11 +246,10 @@
 .msr_pulldown_03 {
   padding-bottom: 20px;
   position: relative;
-//  width: 230px;
-  width: 460px;
+  width: 100%;
 }
 .msr_pulldown_03 p {
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 5px;
 }
 .msr_pulldown_03 select {
@@ -271,7 +273,7 @@
   text-overflow: "";
   padding: 10px;
   height: 40px;
-  width: 230px;
+  width: 100%;
 }
 
 /*--------------------------------------
@@ -280,7 +282,7 @@
 
 .msr_file_03 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 100%;
 }
 .msr_file_03>p {
   font-size: 14px;
@@ -305,7 +307,7 @@
   font-size: 14px;
   padding: 10px;
   height: 20px;
-  width: 460px;
+  width: 100%;
 }
 .msr_filebox_03 label:before {
   background: #D7D7D7;
@@ -331,11 +333,11 @@
 
 .msr_textarea_03 {
   padding-bottom: 10px;
-  width: 460px;
+  width: 100%;
 }
 .msr_textarea_03 label {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 5px;
 }
 .msr_textarea_03 textarea {
@@ -348,14 +350,14 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-size: 17px;
+  font-size: 15px;
   padding: 10px;
   height: 210px;
-  width: 460px;
+  width: 100%;
 }
 
 .msr_textarea_03 textarea.mailtext {
-  height: 1000px;
+  height: 1500px;
 }
 
 /*--------------------------------------
@@ -415,7 +417,7 @@
   border-radius: 3px;
   color: #FFFFFF;
   display: block;
-  font-size: 18px;
+//  font-size: 18px;
   padding: 13px 10px;
   position: relative;
   text-decoration: none;
@@ -446,7 +448,7 @@
   background-color: #1B73BA;
   box-sizing: border-box;
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   padding: 10px;
   text-align: center;
@@ -478,5 +480,36 @@
 //.msr_table02 tr:nth-child(odd) td:nth-child(odd) {
 //  background-color: #F3F3F3;
 //}
+/*--------------------
+ オリジナルのフレーム
+--------------------*/
+.frame {
+ width: 80%;
+ margin: 30px auto 20px;
+ padding: 30px 20px 0;
+ border: 3px solid #aaa;
+ position: relative;
+ border-radius: 3px;
+ background-color: #fff;
+}
+.frame-title {
+ position: absolute;
+ top: -13px;
+ left: 20px;
+ padding: 0 5px;
+ background-color: #fff;
+}
+.frame-title .fa {
+ margin-right: 5px;
+}
+.caution {
+ background-color: #ff4500;
+ border: 2px solid #ff4500;
+ color: #fff;
+ border-radius: 3px;
+}
+.frame-red {
+ border-color: #ff4500;
+}
     </style>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/cupertino/jquery-ui.css">

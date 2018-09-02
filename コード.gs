@@ -1,9 +1,20 @@
-function doGet() {  
-  var html = HtmlService.createTemplateFromFile('input_weekly_report');  
-  
+function doGet() {
+
+//  var htmlOutput = HtmlService.createTemplateFromFile("input_weekly_report").evaluate();
+//  html.data = JSON.stringify( getStaffs() );
+//  htmlOutput
+//    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+//  return htmlOutput;
+
+  var html = HtmlService.createTemplateFromFile('input_weekly_report');
   html.title = 'シュウジェネ';
   html.data = JSON.stringify( getStaffs() );
-  return html.evaluate();  
+  
+  var htmlOutput = html.evaluate();
+  htmlOutput
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+  
+  return htmlOutput;
 }
 
 function doPost(e){
@@ -63,9 +74,25 @@ function doPost(e){
   html.mail_text = mail_text;
   html.mail_address = group_address;
   html.mailto = mailto;
+  
+  html.staff_select = staff_select;
+  html.start_date = start_date;
+  html.end_date = end_date;
+  html.q1 = q1;
+  html.q2 = q2;
+  html.q3 = q3;
+  html.q4 = q4;
+  html.q5 = q5;
+  html.q6 = q6;
+  
   html.parameters = e.parameters;
   //html.data = e;
-  return html.evaluate();
+
+  var htmlOutput = html.evaluate();
+  htmlOutput
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+  
+  return htmlOutput;
   
 }
 

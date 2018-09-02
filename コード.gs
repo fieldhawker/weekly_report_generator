@@ -7,11 +7,11 @@ function doGet() {
 //  return htmlOutput;
 
   var html = HtmlService.createTemplateFromFile('input_weekly_report');
-  html.title = 'シュウジェネ';
   html.data = JSON.stringify( getStaffs() );
   
   var htmlOutput = html.evaluate();
   htmlOutput
+    .setTitle('[SEP][二課１G] シュウジェネ')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
   
   return htmlOutput;
@@ -90,6 +90,7 @@ function doPost(e){
 
   var htmlOutput = html.evaluate();
   htmlOutput
+    .setTitle('[SEP][二課１G] シュウジェネ')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
   
   return htmlOutput;

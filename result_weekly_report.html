@@ -20,7 +20,11 @@
     <div class="msr_text_03">
       <h1 class="msr_h103">シュウジェネ 1.0 Ver.KT </h1>
     </div>
+    <div class="msr_text_03">
+      <h4 class="msr_h403">> <a href="https://script.google.com/macros/s/AKfycbwI7Ye7jN-Fi82zHcXcLG80tDn7n8fcgcCWmiIRnlePe9PgN6Q1/exec">21ポータル</a></h4>
+    </div>
     
+    <form id="form1" name="form1" action="https://script.google.com/macros/s/AKfycbwMP__5vF-w0KVWrUfxpi6gwATkoVf1E99sBmR1IgzNr8REOck/exec" method="post">
     <div class="msr_text_03">
     
       <table class="msr_table02">
@@ -32,20 +36,25 @@
             <td><p class="msr_btn05 btn" data-clipboard-target="#mail_title">
               <a>タイトルをコピー</a>
             </p></td>
-          </tr>
-          <tr>
             <td><p class="msr_btn05 btn" data-clipboard-target="#mail_text">
               <a>本文をコピー</a>
             </p></td>
+          </tr>
+          <tr>
             <td><p class="msr_btn05">
-              <a href=<?=mailto?>>メーラーを起動</a>
+              <a href=<?=mailto?>>メーラを起動</a>
+            </p></td>
+            <td><p class="msr_btn05">
+              <a href=<?=mailto2?>>メーラを起動(エンコード無)</a>
+            </p></td>
+            <td><p class="msr_btn05">
+              <a id="send">メール送信</a>
             </p></td>
           </tr>
         </tbody>
       </table>
     
     </div>
-    
     <div class="msr_text_03">
       <h3 class="msr_h303">宛先</h3>
       <input type="text" id="mail_address" name="mail_address" />
@@ -58,8 +67,10 @@
     
     <div class="msr_textarea_03">
       <h3 class="msr_h303">■本文</h3>
+      <input type="hidden" id="mail_text_hidden" name="mail_text_hidden" />
       <textarea name="text" id="mail_text" class="mailtext"></textarea>
     </div>
+    </form>
     
     <div class="msr_textarea_03">
       <div class="frame frame-red">
@@ -86,11 +97,18 @@
         $.cookie('staff_select', <?=staff_select?>);
         $.cookie('start_date', <?=start_date?>);
         $.cookie('end_date', <?=end_date?>);
+        $.cookie('ordinary_start', <?=ordinary_start?>);
+        $.cookie('ordinary_end', <?=ordinary_end?>);
+        $.cookie('break_start1', <?=break_start1?>);
+        $.cookie('break_end1', <?=break_end1?>);
+        $.cookie('break_start2', <?=break_start2?>);
+        $.cookie('break_end2', <?=break_end2?>);
+        $.cookie('break_start3', <?=break_start3?>);
+        $.cookie('break_end3', <?=break_end3?>);
         $.cookie('q1', <?=q1?>);
         $.cookie('q2', <?=q2?>);
         $.cookie('q3', <?=q3?>);
         $.cookie('q4', <?=q4?>);
-        $.cookie('q5', <?=q5?>);
         $.cookie('q6', <?=q6?>);
                 
         var clipboard = new Clipboard('.btn');
@@ -98,7 +116,6 @@
         clipboard.on('success', function(e) {
           e.clearSelection();
         });
-        
       });
     </script>
   </body>

@@ -25,92 +25,106 @@
     <div class="msr_text_03">
       <h1 class="msr_h103">シュウジェネ 1.0 Ver.KT </h1>
     </div>
+    <div class="msr_text_03">
+      <h4 class="msr_h403">> <a href="https://script.google.com/macros/s/AKfycbwI7Ye7jN-Fi82zHcXcLG80tDn7n8fcgcCWmiIRnlePe9PgN6Q1/exec">21ポータル</a></h4>
+    </div>
 
-  <div class="msr_pulldown_03">
-    <h3 class="msr_h303">名前</h3>
-    <select name="staff_select" id="staff_select">
-      <!--<option value="">選択してください</option>-->
-    </select>
+    <div class="msr_pulldown_03">
+      <h3 class="msr_h303">名前</h3>
+      <select name="staff_select" id="staff_select">
+        <!--<option value="">選択してください</option>-->
+      </select>
+    </div>
+    <div class="msr_text_03">
+      <h3 class="msr_h303">定時</h3>
+      <input type="text" class="w120" id="ordinary_start" name="ordinary_start" value='9:00' /> - 
+      <input type="text" class="w120" id="ordinary_end" name="ordinary_end" value='18:00' />
+    </div>
+    <div class="msr_text_03">
+      <h3 class="msr_h303">休憩時間</h3>
+      <p>
+        <input type="text" class="w120" id="break_start1" name="break_start1" value='12:00' /> - 
+        <input type="text" class="w120" id="break_end1" name="break_end1" value='13:00' />
+      </p>
+      <p>
+        <input type="text" class="w120" id="break_start2" name="break_start2" value='00:00' /> - 
+        <input type="text" class="w120" id="break_end2" name="break_end2" value='00:00' />
+      </p>
+      <p>
+        <input type="text" class="w120" id="break_start3" name="break_start3" value='00:00' /> - 
+        <input type="text" class="w120" id="break_end3" name="break_end3" value='00:00' />
+      </p>
+    </div>
+    <div class="msr_text_03">
+      <h3 class="msr_h303">期間</h3>
+      <input type="text" class="w120" id="start_date" name="start_date" readonly="readonly" /> - 
+      <input type="text" class="w120" id="end_date" name="end_date" readonly="readonly" />
+    </div>
+    <div class="msr_chack_03">
+      <h3 class="msr_h303">■1. 今週は何を行いましたか？<br />(複数回答可)</h3>
+      <input type="checkbox" name="q1" id="msr_03_chack01" value="企画・提案" />
+      <label for="msr_03_chack01">企画・提案</label>
+      <input type="checkbox" name="q1" id="msr_03_chack02" value="要件定義（要求定義）" />
+      <label for="msr_03_chack02">要件定義（要求定義）</label>
+      <input type="checkbox" name="q1" id="msr_03_chack03" value="外部設計（基本設計、概要設計）" />
+      <label for="msr_03_chack03">外部設計（基本設計、概要設計）</label>
+      <input type="checkbox" name="q1" id="msr_03_chack04" value="内部設計（詳細設計、機能設計）" />
+      <label for="msr_03_chack04">内部設計（詳細設計、機能設計）</label>
+      <input type="checkbox" name="q1" id="msr_03_chack05" value="製造・実装" />
+      <label for="msr_03_chack05">製造・実装</label>
+      <input type="checkbox" name="q1" id="msr_03_chack06" value="単体テスト" />
+      <label for="msr_03_chack06">単体テスト</label>
+      <input type="checkbox" name="q1" id="msr_03_chack07" value="結合テスト" />
+      <label for="msr_03_chack07">結合テスト</label>
+      <input type="checkbox" name="q1" id="msr_03_chack08" value="総合テスト" />
+      <label for="msr_03_chack08">総合テスト</label>
+      <input type="checkbox" name="q1" id="msr_03_chack09" value="システムテスト" />
+      <label for="msr_03_chack09">システムテスト</label>
+      <input type="checkbox" name="q1" id="msr_03_chack10" value="運用テスト" />
+      <label for="msr_03_chack10">運用テスト</label>
+      <input type="checkbox" name="q1" id="msr_03_chack11" value="運用・保守" />
+      <label for="msr_03_chack11">運用・保守</label>
+    </div>
+    <div class="msr_pulldown_03">
+      <h3 class="msr_h303">■2. 現在の案件は多忙ですか?</h3>
+      <select name="q2">
+        <option value="余裕がある">余裕がある</option>
+        <option value="やや余裕がある">やや余裕がある</option>
+        <option value="適度な作業量">適度な作業量</option>
+        <option value="やや忙しい">やや忙しい</option>
+        <option value="忙しい">忙しい</option>
+      </select>
+    </div>
+    <div class="msr_pulldown_03">
+      <h3 class="msr_h303">■3. 体調は問題ありませんか？</h3>
+      <select name="q3">
+        <option value="体調が良い">体調が良い</option>
+        <option value="やや体調が良い">やや体調が良い</option>
+        <option value="体調は普通だ" selected>体調は普通だ</option>
+        <option value="やや体調が悪い">やや体調が悪い</option>
+        <option value="体調が悪い">体調が悪い</option>
+      </select>
+    </div>
+    <div class="msr_pulldown_03">
+      <h3 class="msr_h303">■4. 現場の人間関係は?</h3>
+      <select name="q4">
+        <option value="良い">良い</option>
+        <option value="やや良い">やや良い</option>
+        <option value="普通" selected>普通</option>
+        <option value="やや悪い">やや悪い</option>
+        <option value="悪い">悪い</option>
+      </select>
+    </div>
+   
+    <div class="msr_textarea_03">
+      <h3 class="msr_h303">■6. 相談したいこと・困っていること<br />(自由記入)</h3>
+        <textarea id="q6" name="q6"></textarea>
+    </div>
+    <p class="msr_sendbtn_03">
+      <input type="submit" value="出力">
+    </p>
   </div>
-  <div class="msr_text_03">
-    <h3 class="msr_h303">期間</h3>
-    <input type="text" class="w120" id="start_date" name="start_date" readonly="readonly" /> - 
-    <input type="text" class="w120" id="end_date" name="end_date" readonly="readonly" />
-  </div>
-  <div class="msr_chack_03">
-    <h3 class="msr_h303">■1. 今週は何を行いましたか？<br />(複数回答可)</h3>
-    <input type="checkbox" name="q1" id="msr_03_chack01" value="企画・提案" />
-    <label for="msr_03_chack01">企画・提案</label>
-    <input type="checkbox" name="q1" id="msr_03_chack02" value="要件定義（要求定義）" />
-    <label for="msr_03_chack02">要件定義（要求定義）</label>
-    <input type="checkbox" name="q1" id="msr_03_chack03" value="外部設計（基本設計、概要設計）" />
-    <label for="msr_03_chack03">外部設計（基本設計、概要設計）</label>
-    <input type="checkbox" name="q1" id="msr_03_chack04" value="内部設計（詳細設計、機能設計）" />
-    <label for="msr_03_chack04">内部設計（詳細設計、機能設計）</label>
-    <input type="checkbox" name="q1" id="msr_03_chack05" value="製造・実装" />
-    <label for="msr_03_chack05">製造・実装</label>
-    <input type="checkbox" name="q1" id="msr_03_chack06" value="単体テスト" />
-    <label for="msr_03_chack06">単体テスト</label>
-    <input type="checkbox" name="q1" id="msr_03_chack07" value="結合テスト" />
-    <label for="msr_03_chack07">結合テスト</label>
-    <input type="checkbox" name="q1" id="msr_03_chack08" value="総合テスト" />
-    <label for="msr_03_chack08">総合テスト</label>
-    <input type="checkbox" name="q1" id="msr_03_chack09" value="システムテスト" />
-    <label for="msr_03_chack09">システムテスト</label>
-    <input type="checkbox" name="q1" id="msr_03_chack10" value="運用テスト" />
-    <label for="msr_03_chack10">運用テスト</label>
-    <input type="checkbox" name="q1" id="msr_03_chack11" value="運用・保守" />
-    <label for="msr_03_chack11">運用・保守</label>
-  </div>
-  <div class="msr_pulldown_03">
-    <h3 class="msr_h303">■2. 現在の案件は多忙ですか?</h3>
-    <select name="q2">
-      <option value="余裕がある">余裕がある</option>
-      <option value="やや余裕がある">やや余裕がある</option>
-      <option value="適度な作業量">適度な作業量</option>
-      <option value="やや忙しい">やや忙しい</option>
-      <option value="忙しい">忙しい</option>
-    </select>
-  </div>
-  <div class="msr_pulldown_03">
-    <h3 class="msr_h303">■3. 体調は問題ありませんか？</h3>
-    <select name="q3">
-      <option value="体調が良い">体調が良い</option>
-      <option value="やや体調が良い">やや体調が良い</option>
-      <option value="体調は普通だ" selected>体調は普通だ</option>
-      <option value="やや体調が悪い">やや体調が悪い</option>
-      <option value="体調が悪い">体調が悪い</option>
-    </select>
-  </div>
-  <div class="msr_pulldown_03">
-    <h3 class="msr_h303">■4. 現場の人間関係は?</h3>
-    <select name="q4">
-      <option value="良い">良い</option>
-      <option value="やや良い">やや良い</option>
-      <option value="普通" selected>普通</option>
-      <option value="やや悪い">やや悪い</option>
-      <option value="悪い">悪い</option>
-    </select>
-  </div>
-  <div class="msr_pulldown_03">
-    <h3 class="msr_h303">■5. 現在の案件で作業を続けたいですか？</h3>
-    <select name="q5">
-      <option value="続けたい">続けたい</option>
-      <option value="まだ続けても良い">まだ続けても良い</option>
-      <option value="現状維持で良い" selected>現状維持で良い</option>
-      <option value="あまり続けたくない">あまり続けたくない</option>
-      <option value="別の現場に移りたい">別の現場に移りたい</option>
-    </select>
-  </div>
-  
-  <div class="msr_textarea_03">
-    <h3 class="msr_h303">■6. 相談したいこと・困っていること<br />(自由記入)</h3>
-      <textarea id="q6" name="q6"></textarea>
-  </div>
-  <p class="msr_sendbtn_03">
-    <input type="submit" value="出力">
-  </p>
-  </div>
+    
 </form>
 <?!= HtmlService.createHtmlOutputFromFile('javascript').getContent(); ?>
     <script>
@@ -125,7 +139,7 @@
         var q2 = '';
         var q3 = '';
         var q4 = '';
-        var q5 = '';
+//        var q5 = '';
         
         //console.log(staffs);
       
@@ -152,6 +166,31 @@
         if ($.cookie('end_date')) {
           $("#end_date").val($.cookie('end_date'));
         }
+        if ($.cookie('ordinary_start')) {
+          $("#ordinary_start").val($.cookie('ordinary_start'));
+        }
+        if ($.cookie('ordinary_end')) {
+          $("#ordinary_end").val($.cookie('ordinary_end'));
+        }
+        if ($.cookie('break_start1')) {
+          $("#break_start1").val($.cookie('break_start1'));
+        }
+        if ($.cookie('break_end1')) {
+          $("#break_end1").val($.cookie('break_end1'));
+        }
+        if ($.cookie('break_start2')) {
+          $("#break_start2").val($.cookie('break_start2'));
+        }
+        if ($.cookie('break_end2')) {
+          $("#break_end2").val($.cookie('break_end2'));
+        }
+        if ($.cookie('break_start3')) {
+          $("#break_start3").val($.cookie('break_start3'));
+        }
+        if ($.cookie('break_end3')) {
+          $("#break_end3").val($.cookie('break_end3'));
+        }
+        
         
         $("#q6").text($.cookie('q6'));
         
@@ -159,7 +198,7 @@
         if ($.cookie('q2')) q2 = $.cookie('q2');
         if ($.cookie('q3')) q3 = $.cookie('q3');
         if ($.cookie('q4')) q4 = $.cookie('q4');
-        if ($.cookie('q5')) q5 = $.cookie('q5');
+//        if ($.cookie('q5')) q5 = $.cookie('q5');
         
 //        console.log(q2);
         
@@ -187,11 +226,11 @@
           }
         });
         
-        $('select[name="q5"] option').each(function() {
-          if (q5.indexOf( $(this).val() ) !== -1) {
-            $(this).attr('selected', 'selected');
-          }
-        });
+//        $('select[name="q5"] option').each(function() {
+//          if (q5.indexOf( $(this).val() ) !== -1) {
+//            $(this).attr('selected', 'selected');
+//          }
+//        });
         
         //console.log(staffs.data[0].name);
       });

@@ -2,6 +2,10 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="//cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timedropper/1.0/timedropper.min.js"></script>
+    
+    
     <script>
     $(function() {
       $( "#start_date, #end_date" ).datepicker({
@@ -9,7 +13,27 @@
         showWeek: true,
         firstDay: 1,
       });
+      
+      var options = {format:'HH:mm', setCurrentTime:false};
+      $( "#ordinary_start, #ordinary_end" ).timeDropper(options);
+      $( "#break_start1, #break_end1" ).timeDropper(options);
+      $( "#break_start2, #break_end2" ).timeDropper(options);
+      $( "#break_start3, #break_end3" ).timeDropper(options);
+            
       $( "#start_date, #end_date" ).datepicker('setDate', new Date());
-    
+
+      $('#send').click(function(){
+          if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+              $('#mail_text_hidden').val($('#mail_text').val());
+              javascript:form1.submit()
+              return true; // 「OK」時は送信を実行
+          }
+          else{ // 「キャンセル」時の処理
+              window.alert('キャンセルされました'); // 警告ダイアログを表示
+              return false; // 送信を中止
+          }
+      });
+
+
     });
     </script>
